@@ -1,0 +1,168 @@
+<div class="col-md-12" ng-controller="ipinfo_add_place_ctrl" ng-if='gochecklog'>
+    <div class="col-md-12">
+        <form class='form-horizontal'>
+            <div class="form-group col-md-6">
+                <label class="col-md-4 control-label">公司名称:</label>
+                <div class="col-md-6">
+                    <input type="text" name="firm" class="form-control" id="" value="" placeholder="" ng-model="FirmData.firm" />
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label class="col-md-4 control-label">机房所在:</label>
+                <div class="col-md-6">
+                    <input type="text" name="district" class="form-control" id="" value="" placeholder="" ng-model="FirmData.district" />
+                </div>
+            </div>
+            <div class="col-md-12">
+                <p class="bg-info text-danger col-md-offset-5">((firmdata_msg))</p>
+            </div>
+
+        <!-- Modal -->
+            <div class="modal fade" id="Modalfirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">提示</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>确认提交数据,数据将被修改</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="firm_place_post()">确认</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+        
+
+            <div class="row">
+                <button type="submit" class="btn btn btn-primary col-md-offset-5"  data-toggle="modal" data-target="#Modalfirm">提交地址信息</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-12 column">
+        <table id="table-place-basic" class="success"></table>
+    </div>
+	<span> &nbsp; </span>
+	<span> &nbsp; </span>
+	<hr style="width: 100%; color: blue; height: 1px; background-color:blue;"/>
+    <div class="col-md-12" ng-controller="ipinfo_add_database_ctrl">
+        <form class='form-horizontal'>
+            <div class="form-group col-md-6">
+                <label class="col-md-4 control-label">数据库地址添加:</label>
+                <div class="col-md-6">
+                    <input type="text" name="database_addr" class="form-control" id="" value="" placeholder="" ng-model="AddrData.database_addr" />
+                </div>
+            </div>
+            <div class="col-md-12">
+                <p class="bg-info text-danger col-md-offset-5">((AddrData_msg))</p>
+            </div>
+
+        <!-- Modal -->
+            <div class="modal fade" id="Modaladdr" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">提示</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>确认提交数据,数据将被修改</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="data_addr_post()">确认</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+        
+
+            <div class="row">
+                <button type="submit" class="btn btn btn-primary col-md-offset-5"  data-toggle="modal" data-target="#Modaladdr">提交数据库地址信息</button>
+            </div>
+        </form>
+    	<div class="col-md-12 column">
+        	<table id="table-dataaddr-basic" class="success"></table>
+    	</div>
+    </div>
+	<span> &nbsp; </span>
+	<span> &nbsp; </span>
+	<hr style="width: 100%; color: blue; height: 1px; background-color:blue;"/>
+    <div class="col-md-12" ng-controller="ipinfo_add_database_ctrl">
+        <form class='form-horizontal'>
+            <div class="form-group col-md-6">
+                <label class="col-md-4 control-label">数据库用户添加:</label>
+                <div class="col-md-6">
+                    <input type="text" name="database_addr" class="form-control" id="" value="" placeholder="" ng-model="ConnData.data_user" />
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label class="col-md-4 control-label">数据库密码添加:</label>
+                <div class="col-md-6">
+                    <input type="text" name="database_addr" class="form-control" id="" value="" placeholder="" ng-model="ConnData.data_pass" />
+                </div>
+            </div>
+            <div class="col-md-12">
+                <p class="bg-info text-danger col-md-offset-5">((ConnData_msg))</p>
+            </div>
+
+        <!-- Modal -->
+            <div class="modal fade" id="Modalconn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">提示</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>确认提交数据,数据将被修改</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="data_conn_post()">确认</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+        
+
+            <div class="row">
+                <button type="submit" class="btn btn btn-primary col-md-offset-5"  data-toggle="modal" data-target="#Modalconn">提交数据库信息</button>
+            </div>
+        </form>
+    	<div class="col-md-12 column">
+        	<table id="table-dataconn-basic" class="success"></table>
+    	</div>
+    </div>
+    <br />
+    <br />
+</div>
+<div>
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">I'm a modal!</h3>
+        </div>
+        <div class="modal-body">
+            <ul>
+                <li ng-repeat="item in items">
+                    <a ng-click="selected.item = item">(( item ))</a>
+                </li>
+            </ul>
+            确认要改变 <b>(( selected.item ))</b>？
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script> 
+</div>
+<div ng-if='!gochecklog'>
+    <div class="col-md-4 column"></div>
+    <div class="col-md-4 column">
+        <h2>请先登录</h2>
+    </div>
+    <div class="col-md-4 column"></div>
+</div>

@@ -1,0 +1,128 @@
+<div class="col-md-12 column">
+    <h3>BGM:</h3>
+</div>    
+<div ng-controller="Sound2_Ctrl" class="col-md-12 column">
+    <sound-manager></sound-manager>
+
+    <div class="col-md-4 column">
+    
+        <div class="col-md-11 column">
+            <div ng-controller="user_ctrl" class="col-md-12 column">
+                <div class="col-md-12 column">
+                    <span>change music list via user:</span>
+                    <select class="form-control" ng-model="owner" ng-change="ownerchange(owner)" ng-options="i.username for i in users"> 
+                        <option value="" class='btn btn-primary'>change music list</option>
+                    </select>
+                </div>
+            </div>
+
+            <img ng-src="((currentPlaying.img))" class="img-thumbnail" width="100" height="100">
+            <span class="glyphicon glyphicon-music"></span><span>((currentPlaying.img_title))</span>
+            <br /><span class="glyphicon glyphicon-time"></span><span>(( currentPostion )) / (( currentDuration )) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span class="glyphicon glyphicon-volume-down"></span><span id="js-display-change">100</span>
+            <br/>
+            <div class="row col-sm-12 column">
+                <div seek-track class="slider progress">
+                    <div  class="slider-bar progress-bar" role="progressbar" style="height:18px;width:((progress))%;">
+                        <span>((progress|number:0))% </span>
+                    </div>
+                    <div  class="slider-bar progress-bar progress-bar-info" role="progressbar" style="height:18px;width:((load-progress))%;">
+                        <span>((load|number:0))% </span>
+                    </div>
+                </div>
+                <div class="example" class="col-md-1 column">
+                    <input type="text" class="js-check-change" />
+                    <br/>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="../static/js/libs/slider/powerange.min.js"></script>
+        <br/>
+        <br/>
+    
+ 
+        <div class="col-md-12">
+            <div class="col-md-2"></div>
+            <span ng-show="isPlaying">Player status: Playing</span>
+            <span ng-show="!isPlaying">Player status: Paused</span>
+            <br />
+            <div class="col-md-2"></div>
+            <span prev-track class="handpointer glyphicon glyphicon-step-backward"></span>
+            <span play-music class="handpointer glyphicon glyphicon-play" ng-show="!isPlaying"></span>
+            <span pause-music class="handpointer glyphicon glyphicon-pause" ng-show="isPlaying"></span>
+            <span next-track class="handpointer glyphicon glyphicon-step-forward"></span>
+            <span ng-click="replayone()" class="handpointer glyphicon glyphicon-arrow-right" ng-show="!replay"></span>
+            <span ng-click="replayone()" class="handpointer glyphicon glyphicon-repeat" ng-show="replay"></span>
+            <span ng-click="repeat_toggle()" class="handpointer glyphicon glyphicon-circle-arrow-right" ng-show="!repeat"></span>
+            <span ng-click="repeat_toggle()" class="handpointer glyphicon glyphicon-retweet" ng-show="repeat"></span>
+            <br />
+        </div>
+    <div class="col-md-12 column"><br/></div>
+    <div class="col-md-12 column">
+        <button class="btn btn-primary" ng-click="isCollapsed = !isCollapsed">music list - ((person_num))</button>
+        <div collapse="isCollapsed">
+            <div class="col-md-12 column">
+                <div class="col-md-12 column" ng-repeat="song in playlist">
+                    <div class="col-md-12 column">
+                        <img play-from-playlist="song"  ng-src="((song.img))" class="img-thumbnail handpointer" width="70" height="70">
+                        <span ng-if="currentPlaying.id == song.id" class="glyphicon glyphicon-hand-left"></span>
+                        <span remove-from-playlist="song" data-index="(($index))" class="pull-right btn btn btn-warning glyphicon glyphicon-remove"> </span>
+                    </div>
+                    <div class="col-md-12 column">
+                        <button play-from-playlist="song" class="btn btn btn-info"><span class="glyphicon glyphicon-headphones"> ((song.title))</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 column"><br/></div>
+    
+    <div class="col-md-12 column">
+        <div class="col-md-9 column">
+        <accordion>
+        <accordion-group is-open="status.open">
+        <accordion-heading >Add a song <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i></accordion-heading>
+            <div class="col-md-12 column addsongbg" ng-controller="music_ctrl" >
+                        <label>choose a music</label>
+                        <input type="file" file-model="music_file"/>
+                    <div class="col-md-12 column"><br /></div>
+                        <label>choose a image</label>
+                        <input type="file" file-model="music_img"/>
+                    <br />
+                    <br />
+                    <button class="btn btn-info"><span type="submit" ng-click="uploadFile()" class="glyphicon glyphicon-arrow-up">upload</span></button>
+                    <p ng-show='loadinfo' class="bg-danger">((loadinfo))</p>
+                    <p ng-show='$root.loadinfo' class="bg-danger">(($root.loadinfo))</p>
+            </div>
+            </accordion-group>
+            </accordion>
+        </div>
+    </div>
+    <br/>
+</div>
+
+<!-- need js file:
+js/libs/angular/media-player.js
+js/libs/bootstrap/bootstrap-slider-jquery-comb.js
+js/angular-factory/User.js 
+js/angular-factory/Music.js 
+js/angular-controller/user_ctrl.js  
+js/angular-controller/PlayerController.js 
+js/angular-controller/music_ctrl.js  
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
