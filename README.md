@@ -1,4 +1,4 @@
-# Platform of Automatic release 
+# Platform of Ip_information system 
 
 take a short outlook of some cover
 ![head](https://github.com/targetoyes/ip_system/blob/master/readjpg/ip_cover.png)
