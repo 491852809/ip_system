@@ -1,9 +1,9 @@
 # Platform of Automatic release 
 
 take a short outlook of some cover
-![head](https://github.com/targetoyes/ip_system/blob/master/readgif/ip_cover.png)
+![head](https://github.com/targetoyes/ip_system/tree/master/readjpg/ip_cover.png)
 other pages of ip_update
-![add](https://github.com/targetoyes/ip_system/blob/master/readgif/ip_add.png)
+![add](https://github.com/targetoyes/ip_system/tree/master/readjpg/ip_add.png)
 
 Consists of ansible, django, restframework, bootstrap3, angularjs, jquery, and so on.
 
@@ -11,11 +11,7 @@ Consists of ansible, django, restframework, bootstrap3, angularjs, jquery, and s
 
 ## Features
 
-    * Pull code easy
-    * Release to server by clicking
-    * Ansible Log for readings
-    * Html5 upload
-    * All use ansible yml file to control
+    * ip system
 
 ## Install:
 
@@ -73,15 +69,15 @@ $ pip install virtualenv
 Create virtual environment
 
 ```
-$ virtualenv /data/Automation/
+$ virtualenv /data/Ip_systm/
 ```
 
 Create structure of database and put code to the virtual directory
 ```
 example:Put this github to /data/Automation
-source /data/Automation/bin/activate
+source /data/Ip_system/bin/activate
 pip install -r requirements.txt
-cd /data/Automation/dj
+cd /data/Ip_system/dj
 ./manage.py makemigrations ipinfo
 ./manage.py migrate
 ```
