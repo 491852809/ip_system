@@ -1,9 +1,9 @@
 # Platform of Automatic release 
 
 take a short outlook of some cover
-![head](https://github.com/targetoyes/ip_system/tree/master/readjpg/ip_cover.png)
+![head](https://github.com/targetoyes/ip_system/blob/master/readjpg/ip_cover.png)
 other pages of ip_update
-![add](https://github.com/targetoyes/ip_system/tree/master/readjpg/ip_add.png)
+![add](https://github.com/targetoyes/ip_system/blob/master/readjpg/ip_add.png)
 
 Consists of ansible, django, restframework, bootstrap3, angularjs, jquery, and so on.
 
